@@ -17,9 +17,6 @@ functions:
     * get_ledger_data - returns a variable containing the transactions data (accounts and values)
                         (type of return depends on chosen option)
 
-Important:
-    option = 1 -> data will come from relational database
-    option =2 -> data will come from .xlsx files
 
 """
 
@@ -68,8 +65,12 @@ def get_accounts_data(excel_filename="", option=2):
 
     else:
         # reading account numbers from excel file
-        accounts_data = pd.read_excel(excel_filename)
-        return accounts_data
+        try:
+            accounts_data = pd.read_excel(excel_filename)
+        except OSError:
+            print('Could not read/open file', excel_filename)
+        else:
+            return accounts_data
 
 
 def get_ledger_data(excel_filename="", option=2):
@@ -107,8 +108,14 @@ def get_ledger_data(excel_filename="", option=2):
         ledger_data = [('1.2.1', 7), ('1.2.2', 8), ('1.1', 1), ('1.2.2', 2), ('1.3.1.3', 10), ('1.3.1.3', 6), ('1.3.1.1', 2), ('1.2.1', 4), ('1.2.1', 1), ('1.3.1.3', 6), ('1.2.1', 9), ('1.3.1.3', 10), ('1.3.1.1', 8), ('1.3.1.3', 9), ('1.1', 1), ('1.3.1.1', 4), ('1.2.2', 7), ('1.3.1.3', 7), ('1.2.1', 10), ('1.2.2', 9)]
 
         return ledger_data
+
     else:
-        ledger_data = pd.read_excel(excel_filename)
-        return ledger_data
+
+        try:
+            ledger_data = pd.read_excel(excel_filename)
+        except OSError:
+            print('Could not read/open file', excel_filename)
+        else:
+            return ledger_data
 
 

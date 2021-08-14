@@ -9,7 +9,7 @@ class TestOptions(unittest.TestCase):
     # testing final data assuming that initial input comes from .xlsx files
     def test_option2(self):
         root = build_tree(get_accounts_data('chart_of_accounts_test.xlsx', 2))
-        dictx = calculate_ledger(get_ledger_data('ledger_test.xlsx', 2))
+        dictx = calculate_ledger(get_ledger_data('general_ledger_test.xlsx', 2))
         root.fill_values(dictx)
         data = {}
         root.extract_data(data)

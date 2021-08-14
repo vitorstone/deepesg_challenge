@@ -1,8 +1,17 @@
+"""
+Main Function
+
+This script creates a .csv file according to the chart of accounts input and the general ledger input
+
+This script requires that `pandas` and `csv` to be installed within the Python
+environment you are running this script in.
+
+"""
+
+
 import pandas as pd
 import csv
-
 from input import get_ledger_data, get_accounts_data
-
 
 class TreeNode:
     """
@@ -239,9 +248,19 @@ def calculate_ledger_database(ledger_data):
 
 
 def main():
+    """"
+        This function creates a .csv file according to the chart of accounts input and the general ledger input
 
-    excel_filename_chartofaccounts = 'accounts.xlsx'
-    excel_filename_generalledger = 'ledger.xlsx'
+        Important!!
+            Need to change the next 3 lines accordingly
+            option = 1 -> data will come from relational database. If this option is chosen then the
+                          filenames can be left as empty strings
+            option = 2 -> data will come from .xlsx files. If this option is chosen then the filenames
+                          need to be filled appropriately
+    """
+
+    excel_filename_chartofaccounts = 'chart_of_accounts.xlsx'
+    excel_filename_generalledger = 'general_ledger.xlsx'
     option = 2
 
     if option == 2:
