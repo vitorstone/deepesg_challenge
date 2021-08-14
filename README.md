@@ -167,20 +167,22 @@ Of course we also have an else part but it is pretty much the same thing but ins
 
 Finally, we call main() and the .csv file is created.
 
-# Running the program in Linux environment 
+## Running the program in Linux environment 
 
 1) Navigate the terminal to the directory where the script is located using the ```cd``` command.
 2) Type ```python main.py```
 3) A file named chart_of_accounts.csv should appear on the same folder. This file is the final desired output
 
-# test_results.py
+## test_results.py
 This file contains two tests, one for each option. 
 - The first test uses as an input two excel files. They are named chart_of_accounts.test.xlsx and general_ledger_test.xlsx. I wrote them to be exactly like the given example on the deepesg/data_challenge repository. 
 - The second tests uses as an input two lists of tuples (simulating an output coming from a relational database), I also hardcoded them to be exactly like the last case, but with different format, as already stated.
 
 
-# Running the test in Linux environment
+## Running the test in Linux environment
 
 1) Navigate the terminal to the directory where the script is located using the ```cd``` command.
 2) Type ```python -m unittest test_results.py```
 3) You should see on the terminal that 2 tests were ran and an 'OK' message
+
+
